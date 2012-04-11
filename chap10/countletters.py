@@ -11,9 +11,9 @@ with open('alice_in_wonderland.txt') as f:
         except: # letter not in counts
             counts[letter] = 1
 
-printable = { '\n' : 'LF', '\r' : 'CR', ' ' : 'SPACE' }
-
 with open('alice_count.dat', 'w') as f:
+    printable = { '\n' : 'LF', '\r' : 'CR', ' ' : 'SPACE' }
+
     f.write("%-12s%s\n" % ("Character", "Count"))
     f.write("=================\n")
     for letter in sorted(counts):
