@@ -11,10 +11,12 @@ def display(i):
 with open('alice_in_wonderland.txt') as f:
     text = f.read()
 
-counts = 128 * [0]
+counts = {}
 
 for letter in text:
-    counts[ord(letter)] += 1
+    if letter not in counts:
+        counts[letter] = 0
+    counts[letter] += 1
 
 outfile = open('alice_count.dat', 'w')
 outfile.write("%-12s%s\n" % ("Character", "Count"))
