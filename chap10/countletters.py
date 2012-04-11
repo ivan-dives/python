@@ -14,8 +14,8 @@ with open('alice_in_wonderland.txt') as f:
 with open('alice_count.dat', 'w') as f:
     printable = { '\n' : 'LF', '\r' : 'CR', ' ' : 'SPACE' }
 
-    f.write("Character   Count\n")
-    f.write("=================\n")
+    f.write('Character   Count\n')
+    f.write('=================\n')
     for letter in sorted(counts):
-        f.write("%-12s%d\n" % (printable.get(letter, letter), counts[letter]))
+        f.write('%-12s%d\n' % (printable.get(letter, letter), counts[letter]))
 
