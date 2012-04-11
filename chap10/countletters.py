@@ -2,12 +2,6 @@
 # countletters.py
 # 
 
-def display(i):
-    if i == 10: return 'LF'
-    if i == 13: return 'CR'
-    if i == 32: return 'SPACE'
-    return chr(i)
-
 with open('alice_in_wonderland.txt') as f:
     text = f.read()
 
@@ -18,12 +12,11 @@ for letter in text:
         counts[letter] = 0
     counts[letter] += 1
 
-outfile = open('alice_count.dat', 'w')
-outfile.write("%-12s%s\n" % ("Character", "Count"))
-outfile.write("=================\n")
+printable = { '\n' : 'LF', '\r' : 'CR', ' ' : 'SPACE' }
 
-for i in range(len(counts)):
-    if counts[i]:
-	outfile.write("%-12s%d\n" % (display(i), counts[i]))
+with open('alice_count.dat', 'w') as f:
+    f.write("%-12s%s\n" % ("Character", "Count"))
+    f.write("=================\n")
+    for letter in sorted(counts):
+        f.write("%-12s%d\n" % (printable.get(letter, letter), counts[letter]))
 
-outfile.close()
