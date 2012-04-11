@@ -3,15 +3,13 @@
 # 
 
 with open('alice_in_wonderland.txt') as f:
-    text = f.read()
+    counts = {}
 
-counts = {}
-
-for letter in text:
-    try:
-        counts[letter] += 1
-    except: # letter not in counts
-        counts[letter] = 1
+    for letter in f.read():
+        try:
+            counts[letter] += 1
+        except: # letter not in counts
+            counts[letter] = 1
 
 printable = { '\n' : 'LF', '\r' : 'CR', ' ' : 'SPACE' }
 
