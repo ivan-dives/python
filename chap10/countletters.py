@@ -8,9 +8,10 @@ with open('alice_in_wonderland.txt') as f:
 counts = {}
 
 for letter in text:
-    if letter not in counts:
-        counts[letter] = 0
-    counts[letter] += 1
+    try:
+        counts[letter] += 1
+    except: # letter not in counts
+        counts[letter] = 1
 
 printable = { '\n' : 'LF', '\r' : 'CR', ' ' : 'SPACE' }
 
