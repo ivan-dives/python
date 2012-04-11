@@ -1,0 +1,61 @@
+[?1034hTrying:
+    reverse('happy')
+Expecting:
+    'yppah'
+**********************************************************************
+File "stringtools.py", line 3, in __main__.reverse
+Failed example:
+    reverse('happy')
+Expected:
+    'yppah'
+Got:
+    'yppahy'
+Trying:
+    reverse('Python')
+Expecting:
+    'nohtyP'
+**********************************************************************
+File "stringtools.py", line 5, in __main__.reverse
+Failed example:
+    reverse('Python')
+Expected:
+    'nohtyP'
+Got:
+    'nohtyPn'
+Trying:
+    reverse("")
+Expecting:
+    ''
+**********************************************************************
+File "stringtools.py", line 7, in __main__.reverse
+Failed example:
+    reverse("")
+Exception raised:
+    Traceback (most recent call last):
+      File "/usr/lib64/python2.7/doctest.py", line 1254, in __run
+        compileflags, 1) in test.globs
+      File "<doctest __main__.reverse[2]>", line 1, in <module>
+        reverse("")
+      File "stringtools.py", line 15, in reverse
+        new_word += s[(l - 1)]
+    IndexError: string index out of range
+Trying:
+    reverse("P")
+Expecting:
+    'P'
+**********************************************************************
+File "stringtools.py", line 9, in __main__.reverse
+Failed example:
+    reverse("P")
+Expected:
+    'P'
+Got:
+    'PP'
+1 items had no tests:
+    __main__
+**********************************************************************
+1 items had failures:
+   4 of   4 in __main__.reverse
+4 tests in 2 items.
+0 passed and 4 failed.
+***Test Failed*** 4 failures.
