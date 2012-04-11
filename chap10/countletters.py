@@ -8,9 +8,8 @@ def display(i):
     if i == 32: return 'SPACE'
     return chr(i)
 
-infile = open('alice_in_wonderland.txt', 'r')
-text = infile.read()
-infile.close()
+with open('alice_in_wonderland.txt') as f:
+    text = f.read()
 
 counts = 128 * [0]
 
